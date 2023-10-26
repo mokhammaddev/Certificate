@@ -4,7 +4,7 @@ from aiogram.types import KeyboardButton, ReplyKeyboardMarkup
 bosh_kb = ReplyKeyboardMarkup(
     keyboard=[
         [
-            KeyboardButton(text='Start💥')
+            KeyboardButton(text='Boshlash💥')
         ]
     ],
     resize_keyboard=True,
