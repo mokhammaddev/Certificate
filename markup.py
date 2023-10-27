@@ -8,20 +8,18 @@ bosh_kb = ReplyKeyboardMarkup(
         ]
     ],
     resize_keyboard=True,
-    one_time_keyboard=True,
-    selective=True
+    one_time_keyboard=True
 )
 
 one_kb = ReplyKeyboardMarkup(
     keyboard=[
         [
-            KeyboardButton(text="ortga"),
+            KeyboardButton(text="Qaytatdan boshlash🧩"),
             KeyboardButton(text="2-bosqichga o'tish")
         ]
     ],
     resize_keyboard=True,
-    one_time_keyboard=True,
-    selective=True
+    one_time_keyboard=True
 )
 
 two_kb = ReplyKeyboardMarkup(
@@ -32,8 +30,7 @@ two_kb = ReplyKeyboardMarkup(
         ]
     ],
     resize_keyboard=True,
-    one_time_keyboard=True,
-    selective=True
+    one_time_keyboard=True
 )
 
 three_kb = ReplyKeyboardMarkup(
