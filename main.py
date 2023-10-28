@@ -1,11 +1,11 @@
 import asyncio
 import cv2
 from aiogram import F
-from aiogram.types import *
+from aiogram.filters import Command
 from aiogram import Bot, Dispatcher
+from aiogram.methods.delete_message import DeleteMessage
+from aiogram.types import *
 from markup import *
-from aiogram.filters import Command, CommandObject
-from aiogram.types import Message
 import logging
 logging.basicConfig(level=logging.INFO)
 bot = Bot(token="5997549250:AAHIwR6lVFzdoIqs7v5zUubOvS4mHzV8-RU", parse_mode='html')
@@ -14,7 +14,6 @@ arr = []
 
 async def start(message: Message):
     img = FSInputFile("Certificate-shablon/certificate.png")
-    # await message.answer(md.text("Muhammad To'ychiboyev", md.bold('bold')), parse_mode=ParseMode.MARKDOWN)
     await message.answer(
         f"<b>Assalomu alekum {message.from_user.full_name} Sertifikat tayyorlaydigan botga xush kelibsiz!"
         f"Bu bot orqali o’zingizga sertifikat tayyorlab olishingiz mumkin.🎁🎁🎁\n"
@@ -87,7 +86,7 @@ async def nine_level(message: Message):
 
 
 async def finish_level(message: Message):
-    await message.answer("<b>Tabrikliman siz ketma-ketlikni muoffiqiyatli bajardingiz."
+    await message.answer("<b>Tabrikliman siz ketma-ketlikni muvaffaqiyatli bajardingiz."
                          " Sertifikatingizni olishingiz mumkin\n"
                          "Xato kamchiliklar borligini bilamiz olindan uzr so'raymiz😁😁</b>")
     await message.reply("qayta boshlash uchun /start buyrug'ini bering")
@@ -97,8 +96,8 @@ async def help_(message: Message):
     await message.answer(f"<b>Siz ushbu ma'lumotlardan keyin qiynalmay botni ishlata olasiz😎\n"
                          f"Birinchi navbatda har bir bosqichdan o'tayotga albatta pastdagi knopkalarni bosib keyingi bosqichga o'tishni maslahat beraman.Shunda hech qanaqa kamchiliklar bo'lmaydi❌\n"
                          f"Albatta botda kamchiliklar yetarlicha iloji boricha tezroq ushbu kamchiliklarni tuzatishga harakat qilamiz😰"
-                         f"Iloji boricha bir marta matn yozib keyin pastdagi knopkalarga murojaat qilishingizni so'rab qolamiz, bittadan ortiq matn yozmasligizni so'rab qolamiz📌</b>")
-
+                         f"Iloji boricha bir marta matn yozib keyin pastdagi knopkalarga murojaat qilishingizni so'rab qolamiz, bittadan ortiq matn yozmasligizni so'rab qolamiz📌\n"
+                         f"/start buyrug'i bilan Certificate tayyorlashingiz mumkin🧩</b>")
 
 
 async def one_message(message: Message):
@@ -169,9 +168,9 @@ async def one_message(message: Message):
         template = cv2.imread(f'Certificate-client/{message.from_user.id}.jpg')
         if 15 > len(message.text) >= 3:
             if 6 >= len(message.text) >= 3:
-                cv2.putText(template, message.text, (225, 104), cv2.FONT_HERSHEY_DUPLEX, 0.3, (0, 0, 0), 1, cv2.LINE_AA)
+                cv2.putText(template, message.text, (230, 104), cv2.FONT_HERSHEY_DUPLEX, 0.3, (0, 0, 0), 1, cv2.LINE_AA)
             elif 12 > len(message.text) > 6:
-                cv2.putText(template, message.text, (215, 104), cv2.FONT_HERSHEY_DUPLEX, 0.3, (0, 0, 0), 1, cv2.LINE_AA)
+                cv2.putText(template, message.text, (220, 104), cv2.FONT_HERSHEY_DUPLEX, 0.3, (0, 0, 0), 1, cv2.LINE_AA)
             elif 25 >= len(message.text) >= 12:
                 cv2.putText(template, message.text, (207, 104), cv2.FONT_HERSHEY_DUPLEX, 0.3, (0, 0, 0), 1, cv2.LINE_AA)
             cv2.imwrite(f"C:/Users/Muhammad/Desktop/Projects/Certificate/Certificate-client/{message.from_user.id}.jpg",
@@ -205,15 +204,16 @@ async def one_message(message: Message):
 
     if summa == 4:
         template = cv2.imread(f'Certificate-client/{message.from_user.id}.jpg')
-        if 15 > len(message.text) >= 3:
-            if 6 >= len(message.text) >= 3:
-                cv2.putText(template, message.text, (174, 185), cv2.FONT_HERSHEY_COMPLEX, 0.4, (0, 0, 255), 1,
-                            cv2.LINE_AA)
-            elif 12 > len(message.text) > 6:
-                cv2.putText(template, message.text, (165, 185), cv2.FONT_HERSHEY_COMPLEX, 0.4, (0, 0, 255), 1,
-                            cv2.LINE_AA)
-            elif 15 >= len(message.text) >= 12:
-                cv2.putText(template, message.text, (150, 185), cv2.FONT_HERSHEY_COMPLEX, 0.4, (0, 0, 255), 1, cv2.LINE_AA)
+        if 40 >= len(message.text):
+            cv2.putText(template, message.text, (145, 165), cv2.FONT_HERSHEY_SCRIPT_COMPLEX, 0.3, (0, 0, 0), 1,
+                        cv2.LINE_AA)
+        if 80 >= len(message.text) >= 40:
+            cv2.putText(template, message.text[:40], (145, 165), cv2.FONT_HERSHEY_SCRIPT_COMPLEX, 0.3, (0, 0, 0), 1, cv2.LINE_AA)
+            cv2.putText(template, message.text[40:], (145, 175), cv2.FONT_HERSHEY_SCRIPT_COMPLEX, 0.3, (0, 0, 0), 1, cv2.LINE_AA),
+        if 120 >= len(message.text) >= 80:
+            cv2.putText(template, message.text[:40], (145, 165), cv2.FONT_HERSHEY_SCRIPT_COMPLEX, 0.3, (0, 0, 0), 1, cv2.LINE_AA),
+            cv2.putText(template, message.text[40:-40], (145, 175), cv2.FONT_HERSHEY_SCRIPT_COMPLEX, 0.3, (0, 0, 0), 1, cv2.LINE_AA),
+            cv2.putText(template, message.text[80:], (145, 185), cv2.FONT_HERSHEY_SCRIPT_COMPLEX, 0.3, (0, 0, 0), 1, cv2.LINE_AA)
             cv2.imwrite(f"C:/Users/Muhammad/Desktop/Projects/Certificate/Certificate-client/{message.from_user.id}.jpg",
                         template)
             img = FSInputFile(f"Certificate-client/{message.from_user.id}.jpg")
@@ -221,8 +221,8 @@ async def one_message(message: Message):
             await message.answer("5-bosqich tugadi davom ettiring!", reply_markup=five_kb)
         elif len(message.text) < 3:
             await message.answer("Iltimos 3 ta harfdan kam ishlatilmasin")
-        elif len(message.text) > 15:
-            await message.answer("Iltimos 15 ta harfdan ko'p ishlatilmasin")
+        elif len(message.text) > 126:
+            await message.answer("Iltimos 125 ta harfdan ko'p ishlatilmasin")
 
     if summa == 5:
         template = cv2.imread(f'Certificate-client/{message.from_user.id}.jpg')
@@ -294,7 +294,7 @@ async def one_message(message: Message):
                         template)
             img = FSInputFile(f"Certificate-client/{message.from_user.id}.jpg")
             await message.answer_photo(img)
-            await message.answer("9-bosqich tugadi davom ettiring!", reply_markup=nine_kb)
+            await message.answer("9-bosqich tugadi Certifaciringizni yuklab olishingiz mumkin", reply_markup=nine_kb)
         elif len(message.text) < 3:
             await message.answer("Iltimos 3 ta harfdan kam ishlatilmasin")
         elif len(message.text) >= 20:
@@ -313,7 +313,7 @@ dp.message.register(six_level, F.text == "6-bosqichga o'tish")
 dp.message.register(seven_level, F.text == "7-bosqichga o'tish")
 dp.message.register(eight_level, F.text == "8-bosqichga o'tish")
 dp.message.register(nine_level, F.text == "9-bosqichga o'tish")
-dp.message.register(finish_level, F.text == "bosqichni yakunlash")
+dp.message.register(finish_level, F.text == "bosqichni yakunlash🎉")
 
 dp.message.register(one_message, F.text != "1-bosqichga o'tish" or F.text != "2-bosqichga o'tish"
                     or F.text != "3-bosqichga o'tish" or F.text != "4-bosqichga o'tish"

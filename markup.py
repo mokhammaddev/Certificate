@@ -8,35 +8,38 @@ bosh_kb = ReplyKeyboardMarkup(
         ]
     ],
     resize_keyboard=True,
-    one_time_keyboard=True
+    one_time_keyboard=True,
+    selective=True
 )
 
 one_kb = ReplyKeyboardMarkup(
     keyboard=[
         [
-            KeyboardButton(text="Qaytatdan boshlash🧩"),
+            # KeyboardButton(text="Qaytatdan boshlash🧩"),
             KeyboardButton(text="2-bosqichga o'tish")
         ]
     ],
     resize_keyboard=True,
-    one_time_keyboard=True
+    one_time_keyboard=True,
+    selective=True
 )
 
 two_kb = ReplyKeyboardMarkup(
     keyboard=[
         [
-            KeyboardButton(text="1-bosqichga o'tish"),
+            # KeyboardButton(text="1-bosqichga o'tish"),
             KeyboardButton(text="3-bosqichga o'tish")
         ]
     ],
     resize_keyboard=True,
-    one_time_keyboard=True
+    one_time_keyboard=True,
+    selective=True
 )
 
 three_kb = ReplyKeyboardMarkup(
     keyboard=[
         [
-            KeyboardButton(text="2-bosqichga o'tish"),
+            # KeyboardButton(text="2-bosqichga o'tish"),
             KeyboardButton(text="4-bosqichga o'tish")
         ]
     ],
@@ -49,7 +52,7 @@ three_kb = ReplyKeyboardMarkup(
 four_kb = ReplyKeyboardMarkup(
     keyboard=[
         [
-            KeyboardButton(text="3-bosqichga o'tish"),
+            # KeyboardButton(text="3-bosqichga o'tish"),
             KeyboardButton(text="5-bosqichga o'tish")
         ]
     ],
@@ -62,7 +65,7 @@ four_kb = ReplyKeyboardMarkup(
 five_kb = ReplyKeyboardMarkup(
     keyboard=[
         [
-            KeyboardButton(text="4-bosqichga o'tish"),
+            # KeyboardButton(text="4-bosqichga o'tish"),
             KeyboardButton(text="6-bosqichga o'tish")
         ]
     ],
@@ -75,7 +78,7 @@ five_kb = ReplyKeyboardMarkup(
 six_kb = ReplyKeyboardMarkup(
     keyboard=[
         [
-            KeyboardButton(text="5-bosqichga o'tish"),
+            # KeyboardButton(text="5-bosqichga o'tish"),
             KeyboardButton(text="7-bosqichga o'tish")
         ]
     ],
@@ -88,7 +91,7 @@ six_kb = ReplyKeyboardMarkup(
 seven_kb = ReplyKeyboardMarkup(
     keyboard=[
         [
-            KeyboardButton(text="6-bosqichga o'tish"),
+            # KeyboardButton(text="6-bosqichga o'tish"),
             KeyboardButton(text="8-bosqichga o'tish")
         ]
     ],
@@ -101,7 +104,7 @@ seven_kb = ReplyKeyboardMarkup(
 eight_kb = ReplyKeyboardMarkup(
     keyboard=[
         [
-            KeyboardButton(text="7-bosqichga o'tish"),
+            # KeyboardButton(text="7-bosqichga o'tish"),
             KeyboardButton(text="9-bosqichga o'tish")
         ]
     ],
@@ -114,8 +117,8 @@ eight_kb = ReplyKeyboardMarkup(
 nine_kb = ReplyKeyboardMarkup(
     keyboard=[
         [
-            KeyboardButton(text="8-bosqichga o'tish"),
-            KeyboardButton(text="bosqichni yakunlash")
+            # KeyboardButton(text="8-bosqichga o'tish"),
+            KeyboardButton(text="bosqichni yakunlash🎉")
         ]
     ],
     resize_keyboard=True,
