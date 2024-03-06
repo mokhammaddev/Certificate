@@ -7,6 +7,7 @@ from aiogram.methods.delete_message import DeleteMessage
 from aiogram.types import *
 from markup import *
 import logging
+
 logging.basicConfig(level=logging.INFO)
 bot = Bot(token="5997549250:AAHIwR6lVFzdoIqs7v5zUubOvS4mHzV8-RU", parse_mode='html')
 arr = []
@@ -131,12 +132,16 @@ async def one_message(message: Message):
         template = cv2.imread('Certificate-shablon/certificat_bosh.png')
         if 15 > len(message.text) >= 3:
             if 6 >= len(message.text) >= 3:
-                cv2.putText(template, message.text, (230, 51), cv2.FONT_HERSHEY_DUPLEX, 0.7, (0, 255, 0), 1, cv2.LINE_AA)
+                cv2.putText(template, message.text, (230, 51), cv2.FONT_HERSHEY_DUPLEX, 0.7, (0, 255, 0), 1,
+                            cv2.LINE_AA)
             elif 9 > len(message.text) > 6:
-                cv2.putText(template, message.text, (210, 51), cv2.FONT_HERSHEY_DUPLEX, 0.7, (0, 255, 0), 1, cv2.LINE_AA)
+                cv2.putText(template, message.text, (210, 51), cv2.FONT_HERSHEY_DUPLEX, 0.7, (0, 255, 0), 1,
+                            cv2.LINE_AA)
             elif 20 >= len(message.text) >= 9:
-                cv2.putText(template, message.text, (190, 51), cv2.FONT_HERSHEY_DUPLEX, 0.7, (0, 255, 0), 1, cv2.LINE_AA)
-            cv2.imwrite(f"C:/Users/Muhammad/Desktop/Projects/Certificate/Certificate-client/{message.from_user.id}.jpg", template)
+                cv2.putText(template, message.text, (190, 51), cv2.FONT_HERSHEY_DUPLEX, 0.7, (0, 255, 0), 1,
+                            cv2.LINE_AA)
+            cv2.imwrite(f"C:/Users/Muhammad/Desktop/Projects/Certificate/Certificate-client/{message.from_user.id}.jpg",
+                        template)
             img = FSInputFile(f"Certificate-client/{message.from_user.id}.jpg")
             await message.answer_photo(img)
             await message.answer("1-bosqich tugadi davom ettiring!", reply_markup=one_kb)
@@ -149,11 +154,14 @@ async def one_message(message: Message):
         template = cv2.imread(f'Certificate-client/{message.from_user.id}.jpg')
         if 15 > len(message.text) >= 3:
             if 6 >= len(message.text) >= 3:
-                cv2.putText(template, message.text, (230, 68), cv2.FONT_HERSHEY_DUPLEX, 0.4, (255, 0, 0), 1, cv2.LINE_AA)
+                cv2.putText(template, message.text, (230, 68), cv2.FONT_HERSHEY_DUPLEX, 0.4, (255, 0, 0), 1,
+                            cv2.LINE_AA)
             elif 12 > len(message.text) > 6:
-                cv2.putText(template, message.text, (220, 68), cv2.FONT_HERSHEY_DUPLEX, 0.4, (255, 0, 0), 1, cv2.LINE_AA)
+                cv2.putText(template, message.text, (220, 68), cv2.FONT_HERSHEY_DUPLEX, 0.4, (255, 0, 0), 1,
+                            cv2.LINE_AA)
             elif 20 >= len(message.text) >= 12:
-                cv2.putText(template, message.text, (215, 68), cv2.FONT_HERSHEY_DUPLEX, 0.4, (255, 0, 0), 1, cv2.LINE_AA)
+                cv2.putText(template, message.text, (215, 68), cv2.FONT_HERSHEY_DUPLEX, 0.4, (255, 0, 0), 1,
+                            cv2.LINE_AA)
             cv2.imwrite(f"C:/Users/Muhammad/Desktop/Projects/Certificate/Certificate-client/{message.from_user.id}.jpg",
                         template)
             img = FSInputFile(f"Certificate-client/{message.from_user.id}.jpg")
@@ -187,11 +195,14 @@ async def one_message(message: Message):
         template = cv2.imread(f'Certificate-client/{message.from_user.id}.jpg')
         if 15 > len(message.text) >= 3:
             if 6 >= len(message.text) >= 3:
-                cv2.putText(template, message.text, (205, 142), cv2.FONT_HERSHEY_SCRIPT_COMPLEX, 0.8, (0, 255, 0), 1, cv2.LINE_AA)
+                cv2.putText(template, message.text, (205, 142), cv2.FONT_HERSHEY_SCRIPT_COMPLEX, 0.8, (0, 255, 0), 1,
+                            cv2.LINE_AA)
             elif 12 > len(message.text) > 6:
-                cv2.putText(template, message.text, (190, 142), cv2.FONT_HERSHEY_SCRIPT_COMPLEX, 0.8, (0, 255, 0), 1, cv2.LINE_AA)
+                cv2.putText(template, message.text, (190, 142), cv2.FONT_HERSHEY_SCRIPT_COMPLEX, 0.8, (0, 255, 0), 1,
+                            cv2.LINE_AA)
             elif 25 >= len(message.text) >= 12:
-                cv2.putText(template, message.text, (175, 142), cv2.FONT_HERSHEY_SCRIPT_COMPLEX, 0.8, (0, 255, 0), 1, cv2.LINE_AA)
+                cv2.putText(template, message.text, (175, 142), cv2.FONT_HERSHEY_SCRIPT_COMPLEX, 0.8, (0, 255, 0), 1,
+                            cv2.LINE_AA)
             cv2.imwrite(f"C:/Users/Muhammad/Desktop/Projects/Certificate/Certificate-client/{message.from_user.id}.jpg",
                         template)
             img = FSInputFile(f"Certificate-client/{message.from_user.id}.jpg")
@@ -208,12 +219,17 @@ async def one_message(message: Message):
             cv2.putText(template, message.text, (145, 165), cv2.FONT_HERSHEY_SCRIPT_COMPLEX, 0.3, (0, 0, 0), 1,
                         cv2.LINE_AA)
         if 80 >= len(message.text) >= 40:
-            cv2.putText(template, message.text[:40], (145, 165), cv2.FONT_HERSHEY_SCRIPT_COMPLEX, 0.3, (0, 0, 0), 1, cv2.LINE_AA)
-            cv2.putText(template, message.text[40:], (145, 175), cv2.FONT_HERSHEY_SCRIPT_COMPLEX, 0.3, (0, 0, 0), 1, cv2.LINE_AA),
+            cv2.putText(template, message.text[:40], (145, 165), cv2.FONT_HERSHEY_SCRIPT_COMPLEX, 0.3, (0, 0, 0), 1,
+                        cv2.LINE_AA)
+            cv2.putText(template, message.text[40:], (145, 175), cv2.FONT_HERSHEY_SCRIPT_COMPLEX, 0.3, (0, 0, 0), 1,
+                        cv2.LINE_AA),
         if 120 >= len(message.text) >= 80:
-            cv2.putText(template, message.text[:40], (145, 165), cv2.FONT_HERSHEY_SCRIPT_COMPLEX, 0.3, (0, 0, 0), 1, cv2.LINE_AA),
-            cv2.putText(template, message.text[40:-40], (145, 175), cv2.FONT_HERSHEY_SCRIPT_COMPLEX, 0.3, (0, 0, 0), 1, cv2.LINE_AA),
-            cv2.putText(template, message.text[80:], (145, 185), cv2.FONT_HERSHEY_SCRIPT_COMPLEX, 0.3, (0, 0, 0), 1, cv2.LINE_AA)
+            cv2.putText(template, message.text[:40], (145, 165), cv2.FONT_HERSHEY_SCRIPT_COMPLEX, 0.3, (0, 0, 0), 1,
+                        cv2.LINE_AA),
+            cv2.putText(template, message.text[40:-40], (145, 175), cv2.FONT_HERSHEY_SCRIPT_COMPLEX, 0.3, (0, 0, 0), 1,
+                        cv2.LINE_AA),
+            cv2.putText(template, message.text[80:], (145, 185), cv2.FONT_HERSHEY_SCRIPT_COMPLEX, 0.3, (0, 0, 0), 1,
+                        cv2.LINE_AA)
             cv2.imwrite(f"C:/Users/Muhammad/Desktop/Projects/Certificate/Certificate-client/{message.from_user.id}.jpg",
                         template)
             img = FSInputFile(f"Certificate-client/{message.from_user.id}.jpg")
@@ -228,11 +244,14 @@ async def one_message(message: Message):
         template = cv2.imread(f'Certificate-client/{message.from_user.id}.jpg')
         if 15 > len(message.text) >= 3:
             if 6 >= len(message.text) >= 3:
-                cv2.putText(template, message.text, (170, 218), cv2.FONT_HERSHEY_COMPLEX_SMALL, 0.3, (0, 0, 0), 1, cv2.LINE_AA)
+                cv2.putText(template, message.text, (170, 218), cv2.FONT_HERSHEY_COMPLEX_SMALL, 0.3, (0, 0, 0), 1,
+                            cv2.LINE_AA)
             elif 12 > len(message.text) > 6:
-                cv2.putText(template, message.text, (170, 218), cv2.FONT_HERSHEY_COMPLEX_SMALL, 0.3, (0, 0, 0), 1, cv2.LINE_AA)
+                cv2.putText(template, message.text, (170, 218), cv2.FONT_HERSHEY_COMPLEX_SMALL, 0.3, (0, 0, 0), 1,
+                            cv2.LINE_AA)
             elif 15 >= len(message.text) >= 12:
-                cv2.putText(template, message.text, (170, 218), cv2.FONT_HERSHEY_COMPLEX_SMALL, 0.3, (0, 0, 0), 1, cv2.LINE_AA)
+                cv2.putText(template, message.text, (170, 218), cv2.FONT_HERSHEY_COMPLEX_SMALL, 0.3, (0, 0, 0), 1,
+                            cv2.LINE_AA)
             cv2.imwrite(f"C:/Users/Muhammad/Desktop/Projects/Certificate/Certificate-client/{message.from_user.id}.jpg",
                         template)
             img = FSInputFile(f"Certificate-client/{message.from_user.id}.jpg")
@@ -247,11 +266,14 @@ async def one_message(message: Message):
         template = cv2.imread(f'Certificate-client/{message.from_user.id}.jpg')
         if 15 > len(message.text) >= 3:
             if 6 >= len(message.text) >= 3:
-                cv2.putText(template, message.text, (170, 230), cv2.FONT_HERSHEY_SCRIPT_COMPLEX, 0.3, (255, 0, 0), 1, cv2.LINE_AA)
+                cv2.putText(template, message.text, (170, 230), cv2.FONT_HERSHEY_SCRIPT_COMPLEX, 0.3, (255, 0, 0), 1,
+                            cv2.LINE_AA)
             elif 12 > len(message.text) > 6:
-                cv2.putText(template, message.text, (165, 230), cv2.FONT_HERSHEY_SCRIPT_COMPLEX, 0.3, (255, 0, 0), 1, cv2.LINE_AA)
+                cv2.putText(template, message.text, (165, 230), cv2.FONT_HERSHEY_SCRIPT_COMPLEX, 0.3, (255, 0, 0), 1,
+                            cv2.LINE_AA)
             elif 20 >= len(message.text) >= 12:
-                cv2.putText(template, message.text, (160, 230), cv2.FONT_HERSHEY_SCRIPT_COMPLEX, 0.3, (255, 0, 0), 1, cv2.LINE_AA)
+                cv2.putText(template, message.text, (160, 230), cv2.FONT_HERSHEY_SCRIPT_COMPLEX, 0.3, (255, 0, 0), 1,
+                            cv2.LINE_AA)
             cv2.imwrite(f"C:/Users/Muhammad/Desktop/Projects/Certificate/Certificate-client/{message.from_user.id}.jpg",
                         template)
             img = FSInputFile(f"Certificate-client/{message.from_user.id}.jpg")
@@ -266,11 +288,14 @@ async def one_message(message: Message):
         template = cv2.imread(f'Certificate-client/{message.from_user.id}.jpg')
         if 15 > len(message.text) >= 3:
             if 6 >= len(message.text) >= 3:
-                cv2.putText(template, message.text, (320, 218), cv2.FONT_HERSHEY_COMPLEX_SMALL, 0.3, (0, 0, 0), 1, cv2.LINE_AA)
+                cv2.putText(template, message.text, (320, 218), cv2.FONT_HERSHEY_COMPLEX_SMALL, 0.3, (0, 0, 0), 1,
+                            cv2.LINE_AA)
             elif 12 > len(message.text) > 6:
-                cv2.putText(template, message.text, (316, 218), cv2.FONT_HERSHEY_COMPLEX_SMALL, 0.3, (0, 0, 0), 1, cv2.LINE_AA)
+                cv2.putText(template, message.text, (316, 218), cv2.FONT_HERSHEY_COMPLEX_SMALL, 0.3, (0, 0, 0), 1,
+                            cv2.LINE_AA)
             elif 15 >= len(message.text) >= 12:
-                cv2.putText(template, message.text, (312, 218), cv2.FONT_HERSHEY_COMPLEX_SMALL, 0.3, (0, 0, 0), 1, cv2.LINE_AA)
+                cv2.putText(template, message.text, (312, 218), cv2.FONT_HERSHEY_COMPLEX_SMALL, 0.3, (0, 0, 0), 1,
+                            cv2.LINE_AA)
             cv2.imwrite(f"C:/Users/Muhammad/Desktop/Projects/Certificate/Certificate-client/{message.from_user.id}.jpg",
                         template)
             img = FSInputFile(f"Certificate-client/{message.from_user.id}.jpg")
@@ -285,11 +310,14 @@ async def one_message(message: Message):
         template = cv2.imread(f'Certificate-client/{message.from_user.id}.jpg')
         if 15 > len(message.text) >= 3:
             if 6 >= len(message.text) >= 3:
-                cv2.putText(template, message.text, (320, 230), cv2.FONT_HERSHEY_SCRIPT_COMPLEX, 0.3, (255, 0, 0), 1, cv2.LINE_AA)
+                cv2.putText(template, message.text, (320, 230), cv2.FONT_HERSHEY_SCRIPT_COMPLEX, 0.3, (255, 0, 0), 1,
+                            cv2.LINE_AA)
             elif 12 > len(message.text) > 6:
-                cv2.putText(template, message.text, (316, 230), cv2.FONT_HERSHEY_SCRIPT_COMPLEX, 0.3, (255, 0, 0), 1, cv2.LINE_AA)
+                cv2.putText(template, message.text, (316, 230), cv2.FONT_HERSHEY_SCRIPT_COMPLEX, 0.3, (255, 0, 0), 1,
+                            cv2.LINE_AA)
             elif 20 > len(message.text) >= 12:
-                cv2.putText(template, message.text, (312, 230), cv2.FONT_HERSHEY_SCRIPT_COMPLEX, 0.3, (255, 0, 0), 1, cv2.LINE_AA)
+                cv2.putText(template, message.text, (312, 230), cv2.FONT_HERSHEY_SCRIPT_COMPLEX, 0.3, (255, 0, 0), 1,
+                            cv2.LINE_AA)
             cv2.imwrite(f"C:/Users/Muhammad/Desktop/Projects/Certificate/Certificate-client/{message.from_user.id}.jpg",
                         template)
             img = FSInputFile(f"Certificate-client/{message.from_user.id}.jpg")
